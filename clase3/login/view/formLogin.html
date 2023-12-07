@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="../index.php">Home</a>
+        <a href="formRegistro.html">Registro</a>
+        <a href="formLogin.html">Login</a>
+    </div>
+
+    <form action="../buis/login.php" method="post">
+        <h1>Login color sandía</h1>
+        <hr><br>
+        <ul>
+            <fieldset>
+                <legend>Datos del usuario</legend><br>
+                <li>
+                    <!-- Patrón normal para email -->
+                    <label>Correo</label><br>
+                    <input class="inputs" type="email" name="correo" required maxlength="254" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+                </li>
+
+                <li>
+                    <!-- https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a -->
+                    <!-- Minimum eight characters, at least one uppercase letter, one lowercase letter and one number -->
+                    <label>Contraseña</label><br>
+                    <input class="inputs" type="password" name="passw" required maxlength="254"><br><br>
+                </li>
+            </fieldset>
+
+            <li>
+                <input type="submit" class="boton" value="¡Iniciar sesión!"><br><br>
+            </li>
+
+        </ul>
+    </form>
+    <br><br>
+</body>
+
+</html>

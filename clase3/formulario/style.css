@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --back: #FFFFFF;
+    --text: #180202;
+    --primary: #EEF297;
+    --secondary: #9BDE7C;
+    --accent: #FF8F8F;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+}
+
+form {
+    margin: 0 auto;
+    width: 450px;
+    border: 5px solid var(--accent);
+    background-color: var(--back);
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 50px;
+    border-radius: 25px;
+}
+
+form h1 {
+    font-size: 60px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+form ul {
+    padding-left: 0;
+    padding-right: 0;
+    list-style: none;
+}
+
+input:valid {
+    border: 3px solid var(--secondary);
+}
+
+input:invalid {
+    border: 3px solid var(--accent);
+}
+
+fieldset {
+    border-top-color: var(--accent);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    font-size: 25px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid var(--accent);
+    padding: 0;
+}
+
+
+
+
+
+.boton {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: 500px;
+    transition-property: background-color, border-color, color, box-shadow, filter;
+    transition-duration: .3s;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 16px 24px 32px;
+    color: #616467;
+    box-shadow: inset 0 0 0 2px var(--secondary);
+    background-color: transparent;
+    height: 48px;
+}
+
+.boton:hover {
+    color: #fff;
+    background-color: var(--secondary);
+}
+
+
+
+
+
+.inputs {
+    border: 3px solid var(--primary);
+    border-radius: 5px;
+    height: 50px;
+    line-height: normal;
+    color: #282828;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    user-select: auto;
+    font-size: 24px;
+    padding: 0 6px;
+    padding-left: 12px;
+}
+
+
+.inputs:focus {
+    border: 3px solid var(--primary);
+}
