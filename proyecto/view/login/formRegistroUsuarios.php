@@ -114,7 +114,7 @@ include_once "../../buis/sesion.php";
 
                     <input type="number" class="form-control" id="lvl" name="lvl" value="0" hidden>
                     <br>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Registrar</button>
                     <br><br>
                 </form>
             </main>

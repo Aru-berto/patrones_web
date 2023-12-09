@@ -39,11 +39,11 @@
                 <legend>Usuario</legend>
                 <li>
                     <label for="">Correo</label>
-                    <input type="email" name="correo" required>
+                    <input type="email" name="correo" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$">
                 </li>
                 <li>
                     <label for="">Contraseña</label>
-                    <input type="password" name="passw" required>
+                    <input type="password" name="passw" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                 </li>
             </fieldset>
                 <li>

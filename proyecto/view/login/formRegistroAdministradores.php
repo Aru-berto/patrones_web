@@ -133,7 +133,7 @@ if (!isset($_SESSION['lvl'])) {
                         </option>
                     </select>
                     <br>
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Registrar</button>
                     <br><br>
                 </form>
             </main>
