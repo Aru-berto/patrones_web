@@ -1,0 +1,132 @@
+:root{
+    --claro: #0766AD;
+    --oscuro: #033a64;
+    --pastel: #29ADB2;
+}
+
+
+
+
+form{
+    margin: 0 auto;
+    width: 350px;
+    border: 1px solid var(--claro);
+}
+
+form li{
+    margin: 4px;
+}
+
+form ul{
+    list-style: none;
+}
+
+input:valid{
+    border: 1px solid green;
+
+}
+
+input:invalid{
+    border: 1px solid red;
+}
+
+
+/* Estilo para boton*/
+button{
+
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #04AA6D;
+  }
+  
+  .button1:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+
+  .button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+  }
+  
+  .button2:hover {
+    background-color: #008CBA;
+    color: white;
+  }
+
+
+  .button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #ba0000;
+  }
+  
+  .button3:hover {
+    background-color: #ba0000;
+    color: white;
+  }
+  
+  /*  Headers/Titles */
+
+  legend{
+    color: var(--mate1);
+    text-align: center;
+}
+
+label{
+    display: inline-block;
+    width: 80px;
+}
+
+fieldset{
+    margin-top: 4px;
+    border-top-color: var(--mate1);
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    margin-right: 20px;
+}
+
+
+h1{
+  text-align: center;
+  margin: 0 auto;
+    width: 350px;
+    border: 1px solid var(--claro);
+}
+
+
+/* Tablas */
+
+table {
+  
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+ padding-right: 30%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: center;
+  padding: 30px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

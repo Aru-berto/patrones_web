@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="view/styles.css">
+    <title>Document</title>
+</head>
+<body>
+<form action="includes/actreg.inc.php" method="post"> 
+    <ul>
+        <fieldset>
+      <legend>Agregar actores</legend>
+       <!-- Campos a llenar en el formulario -->
+        <li> <label for="">Nombre</label>
+        <input type="text" name="name" required>
+        </li>
+
+        <li><label for="">Apellido</label>
+        <input type="text" name="last" required>
+        </li>
+
+        <li><label for="">Agregado</label>
+        <input type="date" name="dat" required>
+        </li>
+         </fieldset> 
+       <!-- Boton de agregar -->
+<li><center><button class=" button button1" type="submit">Enviar</button></center></li>
+
+    </ul>
+</form>
+
+       <!-- boton para actor list -->
+
+<form action="actorlist.php">
+    <ul>
+            <fieldset>
+        <legend>Lista de actores</legend> 
+            </fieldset>
+    <li><center><button class="button button2" type="submit">Ver Actores</button></center></li>   
+    </ul>
+</form>
+
+        <!-- Boton para vincular film y actor -->
+
+<form action="actfilmform.php">
+    <ul>
+            <fieldset>
+        <legend>Formulario para vincular Actores Y Films</legend> 
+            </fieldset>
+    <li><center><button class="button button2" type="submit">Ir al Formulario</button></center></li>   
+    </ul>
+</form>
+
+<form action="filmactorlist.php">
+    <ul>
+            <fieldset>
+        <legend>Tabla de Actores y Peliculas</legend> 
+            </fieldset>
+    <li><center><button class="button button2" type="submit">Ver Tabla</button></center></li>   
+    </ul>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
+/* paletas de colores */
+/* verde y rojo https://colorhunt.co/palette/c21010e64848fffde3cfe8a9 */
+/* beige https://colorhunt.co/palette/faebe0c9e4c5b5cda3c1ac95 */
+
+/*colores para probar fondos a ver si quedan FFFDE3 CFE8A9 FAEBE0 96CEB4 */
+
+/* color undraw #FFD763 */
+
+/* fondo original F5F5F5 */
+
+/*
+tipo de color 1:
+	nav: #c76e4e
+	fondo: #eed9bd
+	titulo: #4e84b0
+
+*/
+
+/*
+tipo de color 2:
+	nav: #3f7083
+	fondo: #7ac9d2
+	titulo: #c76e4e
+
+*/
+
+:root {
+    color-scheme: only light;
+}
+
+/*colores del diseño*/
+body {
+    background-color: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+    /*font-family: 'Montserrat', sans-serif;*/
+    text-align: center;
+    font-size: large;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    color: white;
+    text-align: center;
+}
+/* ---------------------------------------------------------------- Clases ---------------------------------------------------------------- */
+
+/*colores del diseño*/
+/*.nav_color{
+    background-color: #3f7083;
+  }*/
+
+/*colores del diseño*/
+/*.btn-danger{
+    background-color: #c76e4e;
+    border-color: #c76e4e;
+  }*/
+
+/*colores del diseño*/
+/*.titulo{
+    color: #c76e4e;
+  }*/
+
+.text-left {
+    text-align: center;
+}
+
+.button {
+    background-color: #4caf50; /* Blue */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+.padding-50 {
+    padding: 50px;
+}
+
+.left {
+    position: absolute;
+    left: 0px;
+
+    padding: 10px;
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; /*change this to your desired size */
+    line-height: normal;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.btn-padding {
+    margin: 10px;
+}
+
+.card {
+    display: inline-block;
+}

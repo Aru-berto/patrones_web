@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../view/css/Estilo.css">
+   
+    <title>Registro</title>
+</head>
+<body>
+    
+    <form action="../buis/registro.php" method="post">
+    <ul>
+    <fieldset>
+        <legend>Datos personales</legend>
+    <li> <label>Nombre</label> 
+        <input class="input1" type="text" name="txtnombre" required>
+    </li>
+    <li> 
+        <label>Paterno</label> 
+        <input class="input1" type="text" name="txtpaterno" required>
+    </li>
+    <li> 
+        <label>Materno</label> 
+        <input class="input1" type="text" name="txtmaterno">
+    </li>
+    <li> 
+        <label>Fecha Nacimiento</label> 
+        <input class="input1" type="date" name="dtfechanac" required>
+    </li>
+</fieldset>
+
+<fieldset>
+    <legend>Usuario</legend>
+    <li> 
+        <label>Correo</label> 
+        <input class="input1" type="email" name="correo" required>
+    </li>
+    <li> 
+        <label>Contraseña</label>
+        <input class="input1" type="password" name="passw" required>
+    </li>
+    <li> 
+        <label>Nickname</label>
+        <input class="input1" type="text" name="txtnick" required pattern="[A-Za-z0-9]{2,20}" >
+    </li>
+</fieldset>
+<li>
+                
+    <input class="btn_registro" type="submit" value="¡Regístrate!">
+
+     </li>
+    </ul>
+    </form>
+</body>
+</html>

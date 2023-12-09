@@ -1,0 +1,32 @@
+.claro {
+    background-color: #ffba95;
+}
+
+.oscuro {
+    background-color: #d05e2b;
+}
+
+.oscuro2 {
+    background-color: #572013;
+    color: white;
+}
+
+.medio {
+    background-color: #ec7137;
+}
+
+.azul_oscuro {
+    background-color: #1e4844;
+    color: white;
+}
+
+.azul_claro {
+    background-color: #678482;
+}
+
+/* ------------------------------------------------------------------------------ */
+
+.btn-oscuro2 {
+    background-color: #572013;
+    border: #d05e2b;
+}
