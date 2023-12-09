@@ -82,7 +82,7 @@ if (!isset($_SESSION['lvl'])) {
                 <h4>Presione cualquier botón para para revisar los proyectos individuales de cada compañero</h4>
                 <span>
                     <a href='individuales/mani/view/insertcus.php' class='btn btn-dark btn-padding'>José Manuel</a>
-                    <a href='individuales/alan' class='btn btn-dark btn-padding'>Alan</a>
+                    <a href='individuales/alan/view/inicio.php' class='btn btn-dark btn-padding'>Alan</a>
                     <a href='individuales/jona/index.php' class='btn btn-dark btn-padding'>Jonathan</a>
                     <a href='individuales/rebeca/index.php' class='btn btn-dark btn-padding'>Rebeca</a>
                     <a href='individuales/gerardo/index.php' class='btn btn-dark btn-padding'>Gerardo</a>
@@ -97,8 +97,8 @@ if (!isset($_SESSION['lvl'])) {
                         <a href='individuales/lepe/index.php' class='btn btn-dark btn-padding'>Películas</a>
                         <a href='individuales/rebeca/view/formCategory.html' class='btn btn-dark btn-padding'>Categorías</a>
                         <a href='individuales/rebeca/view/formLanguage.html' class='btn btn-dark btn-padding'>Lenguajes</a>
-                        <a href='individuales/alan/' class='btn btn-dark btn-padding'>Direcciones</a>
-                        <a href='individuales/alan/' class='btn btn-dark btn-padding'>Ciudades</a>
+                        <a href='individuales/alan/view/addressform.php' class='btn btn-dark btn-padding'>Direcciones</a>
+                        <a href='individuales/alan/view/cityform.php' class='btn btn-dark btn-padding'>Ciudades</a>
                         <a href='individuales/rebeca/view/formCountry.html' class='btn btn-dark btn-padding'>Países</a>
                         <a href='individuales/bernardo/actorform.html' class='btn btn-dark btn-padding'>Actores</a>
                         <a href='individuales/bernardo/actfilmform.php' class='btn btn-dark btn-padding'>Actores en películas</a>
