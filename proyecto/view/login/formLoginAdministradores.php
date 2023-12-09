@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php
 // José Alberto Hernández Negrete: josealbertotijuana@gmail.com
+
+// Suddenly SES(sion)
+include_once "../../buis/sesion.php";
 ?>
 <html lang="en">
 

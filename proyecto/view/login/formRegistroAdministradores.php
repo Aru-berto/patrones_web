@@ -4,6 +4,17 @@
 
 // Suddenly SES(sion)
 include_once "../../buis/sesion.php";
+
+if (!isset($_SESSION['lvl'])) {
+    header('Location: ../../index.php');
+} else {
+    if ($_SESSION['lvl'] != 1) {
+        header('Location: ../../index.php');
+    }
+}
+
+
+
 ?>
 
 <html lang="en">
