@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="../buis/login.php" method="post">
+        <ul>
+  
+  <fieldset>
+        <legend>Usuario</legend>
+        <li>
+        <label>Correo</label>
+        <input type="email" name="txtemail" required>
+        </li>
+        <li>
+        <label>Contraseña</label>
+        <input type="password" name="txtpass"   pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+        </li>
+    <li  >
+        <input class="btnsubmit" type="submit">
+    </li>
+</fieldset>
+</ul>
+    </form>
+</body>
+</html>

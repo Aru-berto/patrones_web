@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php 
+    include('../buis/session.php')
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +10,29 @@
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <section>
+            <lu>
+                <?php
+                if($loginU){
+                    echo "
+                    <li>
+                        <a href='../index.php'>Pagina principal</a>
+                    </li>";
+                }
+                else{
+                    echo "
+                    <li>
+                        <a href='../index.php'>Inicio</a>
+                    </li>";
+                }
+                ?>
+            </lu>
+        </section>
+</header>
+<?php 
+if($loginU){
+    ?>
     <form action="../buis/registro.php" method="post">
         <ul>
             <fieldset>
@@ -75,5 +101,13 @@
                 </li>
         </ul>
     </form>
+<?php
+}
+else{
+    echo "Por favor inicia sesion";
+}
+?>
+
+    
 </body>
 </html>

@@ -13,5 +13,5 @@ $customer->setActive($_POST['active']);
 
 $newidCustomer = $customer->setCustomers();
 //echo " Customer " .$newidCustomer;
-header('location: ../view/showcus.php')
+header('location: ../index.php')
 ?>

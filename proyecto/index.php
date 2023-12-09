@@ -7,6 +7,10 @@ include_once "buis/sesion.php";
 
 // Mani
 include_once('individuales/mani/data/ShowCustomer.php');
+
+if (!isset($_SESSION['lvl'])) {
+    $_SESSION['lvl'] = 0;
+}
 ?>
 
 <html lang="en">
@@ -79,7 +83,7 @@ include_once('individuales/mani/data/ShowCustomer.php');
                 <span>
                     <a href='individuales/mani/view/insertcus.php' class='btn btn-dark btn-padding'>José Manuel</a>
                     <a href='individuales/alan' class='btn btn-dark btn-padding'>Alan</a>
-                    <a href='individuales/jona' class='btn btn-dark btn-padding'>Jonathan</a>
+                    <a href='individuales/jona/index.php' class='btn btn-dark btn-padding'>Jonathan</a>
                     <a href='individuales/rebeca/index.php' class='btn btn-dark btn-padding'>Rebeca</a>
                     <a href='individuales/gerardo/index.php' class='btn btn-dark btn-padding'>Gerardo</a>
                     <a href='individuales/lepe/index.php' class='btn btn-dark btn-padding'>Lepe</a>
@@ -99,7 +103,7 @@ include_once('individuales/mani/data/ShowCustomer.php');
                         <a href='individuales/bernardo/actorform.html' class='btn btn-dark btn-padding'>Actores</a>
                         <a href='individuales/bernardo/actfilmform.php' class='btn btn-dark btn-padding'>Actores en películas</a>
                         <a href='individuales/mani/view/insertcus.php' class='btn btn-dark btn-padding'>Clientes</a>
-                        <a href='individuales/jona/' class='btn btn-dark btn-padding'>Staff</a>
+                        <a href='individuales/jona/view/FormRegistro.php' class='btn btn-dark btn-padding'>Staff</a>
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Inventario</a>
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Rentas</a>
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Pagos</a>
