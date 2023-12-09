@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topnav">
+        <a class="active" href="../index.php">Home</a>
+        <a href="formRegistro.html">Registro</a>
+        <a href="formLogin.html">Login</a>
+    </div>
+
+    <form action="../buis/registro.php" method="post">
+        <h1>Registro color sandía</h1>
+        <hr><br>
+        <ul>
+            <fieldset>
+                <legend>Datos personales del empleado</legend><br>
+                <li>
+                    <!-- https://stackoverflow.com/questions/275160/regex-for-names -->
+                    <!-- "It matches Jérémie O'Co-nor so I think it matches all UTF-8 names" -->
+                    <label>Nombre</label><br>
+                    <input class="inputs" type="text" name="txtnombre" required maxlength="254" pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"><br><br>
+                </li>
+
+                <li>
+                    <!-- Igual que el nombre -->
+                    <label>Paterno</label><br>
+                    <input class="inputs" type="text" name="txtpaterno" required maxlength="254" pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"><br><br>
+                </li>
+
+                <li>
+                    <!-- Igual que el nombre -->
+                    <label>Materno</label><br>
+                    <input class="inputs" type="text" name="txtmaterno" maxlength="254" pattern="^([ \u00c0-\u01ffa-zA-Z'\-])+$"><br><br>
+                </li>
+
+                <li>
+                    <!-- https://stackoverflow.com/questions/30650393/html5-input-date-attribute-selecting-between-two-dates -->
+                    <!-- Entre 1958 y 2005 -->
+                    <label>Fecha nacimiento</label><br>
+                    <input class="inputs" type="date" name="dtfechanac" min="1958-01-01" max="2005-12-31" required><br>
+                </li>
+            </fieldset>
+
+            <!-- ------------------------------------------------------------------- -->
+            
+
+            <fieldset>
+                <legend>Datos del usuario</legend><br>
+                <li>
+                    <!-- Patrón normal para email -->
+                    <label>Correo</label><br>
+                    <input class="inputs" type="email" name="correo" required maxlength="254" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"><br><br>
+                </li>
+
+                <li>
+                    <!-- https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a -->
+                    <!-- Minimum eight characters, at least one uppercase letter, one lowercase letter and one number -->
+                    <label>Contraseña</label><br>
+                    <input class="inputs" type="password" name="passw" required maxlength="254" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$"><br><br>
+                </li>
+
+                <li>
+                    <!-- Igual que el nombre pero con números -->
+                    <label>Usuario</label><br>
+                    <input class="inputs" type="text" name="txtnick" required maxlength="254" pattern="^([ \u00c0-\u01ffa-zA-Z0-9'\-])+$"><br>
+                </li>
+            </fieldset>
+
+            <li>
+                <input type="submit" class="boton" value="¡Regístralo ahora!"><br><br>
+            </li>
+
+        </ul>
+    </form>
+    <br><br>
+</body>
+
+</html>
