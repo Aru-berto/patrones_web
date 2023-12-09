@@ -37,5 +37,35 @@ public function getIdiomAll(){
 }
 
 }
+?>
+<?php
+include_once("Connection.php");
+class IdiomF{
+    private $id;
+    private $idioma;
+
+
+    public function setLanguag($idioma){
+        $this->idioma = $idioma;
+}
+
+
+public function setIdiomF(){
+    $query = 
+    "insert into language (name) 
+    values ('$this->idioma')";
+    echo $query;
+    $con1 = Connection::getInstance();
+    $conectado = $con1->__connect();
+        if($conectado){
+            $newid = $con1->insert($query);
+            echo "Nuevo id: " . $newid;
+        }
+        else{
+            echo "Problemas con la conexion";
+    }   
+        return $newid;
+    }
+}    
 
 ?>

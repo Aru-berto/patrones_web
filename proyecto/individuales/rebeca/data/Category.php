@@ -43,3 +43,35 @@ public function getCategorAll(){
 
 }
 ?>
+
+<?php
+include_once("Connection.php");
+class CategoriaF{
+    private $id;
+    private $Cat;
+
+
+    public function setCateg($cate){
+        $this->Cat = $cate;
+}
+
+
+public function setCategoryF(){
+    $query = 
+    "insert into category (name) 
+    values ('$this->Cat')";
+    echo $query;
+    $con1 = Connection::getInstance();
+    $conectado = $con1->__connect();
+        if($conectado){
+            $newid = $con1->insert($query);
+            echo "Nuevo id: " . $newid;
+        }
+        else{
+            echo "Problemas con la conexion";
+    }   
+        return $newid;
+    }
+}    
+
+?>

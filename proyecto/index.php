@@ -39,10 +39,13 @@ include_once('individuales/mani/data/ShowCustomer.php');
                 <ul class="navbar-nav ms-auto">
                     <?php
                     if ($loginU) {
-                        echo "<li class='nav-item'><a class='nav-link active' href='buis/logout.php'>Logout</a></li>
-                        <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
-                        <li class='nav-item'><a class='nav-link active' href='formRegistroAdministradores.php'>Usuarios</a>
-                        </li>";
+                        echo "<li class='nav-item'><a class='nav-link active' href='buis/logout.php'>Logout</a></li>";
+                        if ($_SESSION['lvl'] == 1) {
+                            echo "
+                            <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
+                            <li class='nav-item'><a class='nav-link' href='view/login/formRegistroAdministradores.php'>Usuarios</a>
+                            </li>";
+                        }
                     } else {
                         echo "<li class='nav-item'><a class='nav-link disabled' href='#'>Login:</a></li>
                         <li class='nav-item'><a class='nav-link' href='view/login/formLoginUsuarios.php'>Usuarios</a></li>
@@ -81,18 +84,18 @@ include_once('individuales/mani/data/ShowCustomer.php');
                     <a href='individuales/gerardo/index.php' class='btn btn-dark btn-padding'>Gerardo</a>
                     <a href='individuales/lepe/index.php' class='btn btn-dark btn-padding'>Lepe</a>
                     <a href='individuales/bernardo/actorform.html' class='btn btn-dark btn-padding'>Bernardo</a>
-                    <a href='index.php' class='btn btn-dark btn-padding'>José Alberto</a>
+                    <a href='view/emp_usr/menu.php' class='btn btn-dark btn-padding'>José Alberto</a>
                 </span>";
                 if ($_SESSION['lvl'] == 1) {
                     echo "<hr>
                     <h4>[Administrador] Presione cualquier botón para acceder a los forms de creación de cada tabla</h4>
                     <span>
                         <a href='individuales/lepe/index.php' class='btn btn-dark btn-padding'>Películas</a>
-                        <a href='individuales/rebeca/' class='btn btn-dark btn-padding'>Categorías</a>
+                        <a href='individuales/rebeca/view/formCategory.html' class='btn btn-dark btn-padding'>Categorías</a>
                         <a href='individuales/rebeca/view/formLanguage.html' class='btn btn-dark btn-padding'>Lenguajes</a>
                         <a href='individuales/alan/' class='btn btn-dark btn-padding'>Direcciones</a>
                         <a href='individuales/alan/' class='btn btn-dark btn-padding'>Ciudades</a>
-                        <a href='individuales/rebeca/' class='btn btn-dark btn-padding'>Países</a>
+                        <a href='individuales/rebeca/view/formCountry.html' class='btn btn-dark btn-padding'>Países</a>
                         <a href='individuales/bernardo/actorform.html' class='btn btn-dark btn-padding'>Actores</a>
                         <a href='individuales/bernardo/actfilmform.php' class='btn btn-dark btn-padding'>Actores en películas</a>
                         <a href='individuales/mani/view/insertcus.php' class='btn btn-dark btn-padding'>Clientes</a>
@@ -100,7 +103,7 @@ include_once('individuales/mani/data/ShowCustomer.php');
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Inventario</a>
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Rentas</a>
                         <a href='individuales/gerardo/' class='btn btn-dark btn-padding'>Pagos</a>
-                        <a href='view/login/login/formRegistroAdministradores.php' class='btn btn-dark btn-padding'>Empleados / Usuarios</a>
+                        <a href='view/login/formRegistroAdministradores.php' class='btn btn-dark btn-padding'>Empleados / Usuarios</a>
                     </span>";
                 }
             } else {

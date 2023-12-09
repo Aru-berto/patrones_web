@@ -41,3 +41,35 @@ public function getCountAll(){
 }
 
 ?>
+
+<?php
+include_once("Connection.php");
+class CountryF{
+    private $id;
+    private $country;
+
+
+    public function setCountr($pais){
+        $this->country = $pais;
+}
+
+
+public function setCountryF(){
+    $query = 
+    "insert into country (country) 
+    values ('$this->country')";
+    echo $query;
+    $con1 = Connection::getInstance();
+    $conectado = $con1->__connect();
+        if($conectado){
+            $newid = $con1->insert($query);
+            echo "Nuevo id: " . $newid;
+        }
+        else{
+            echo "Problemas con la conexion";
+    }   
+        return $newid;
+    }
+}    
+
+?>

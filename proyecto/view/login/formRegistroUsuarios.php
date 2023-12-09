@@ -36,16 +36,19 @@ include_once "../../buis/sesion.php";
                 <ul class="navbar-nav ms-auto">
                     <?php
                     if ($loginU) {
-                        echo "<li class='nav-item'><a class='nav-link active' href='buis/logout.php'>Logout</a></li>
-                        <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
-                        <li class='nav-item'><a class='nav-link active' href='formRegistroAdministradores.php'>Usuarios</a>
-                        </li>";
+                        echo "<li class='nav-item'><a class='nav-link active' href='../../buis/logout.php'>Logout</a></li>";
+                        if ($_SESSION['lvl'] == 1) {
+                            echo "
+                            <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
+                            <li class='nav-item'><a class='nav-link' href='formRegistroAdministradores.php'>Usuarios</a>
+                            </li>";
+                        }
                     } else {
                         echo "<li class='nav-item'><a class='nav-link disabled' href='#'>Login:</a></li>
-                        <li class='nav-item'><a class='nav-link' href='view/login/formLoginUsuarios.php'>Usuarios</a></li>
-                        <li class='nav-item'><a class='nav-link' href='view/login/formLoginAdministradores.php'>Administradores</a></li>
+                        <li class='nav-item'><a class='nav-link' href='formLoginUsuarios.php'>Usuarios</a></li>
+                        <li class='nav-item'><a class='nav-link' href='formLoginAdministradores.php'>Administradores</a></li>
                         <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
-                        <li class='nav-item'><a class='nav-link' href='view/login/formRegistroUsuarios.php'>Usuarios</a>
+                        <li class='nav-item'><a class='nav-link active' href='formRegistroUsuarios.php'>Usuarios</a>
                         </li>";
                     }
                     ?>

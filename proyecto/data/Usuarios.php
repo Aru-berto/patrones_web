@@ -66,6 +66,34 @@ class Usuarios
         return $dataset;
 
     }
+
+    public function showUsuarios()
+    {
+        $query = "SELECT userid, email, passw, nickname, IF(user_lvl=0, 'Usuario', 'Administrador') user_lvl, fechalt, nombre, paterno FROM usuarios INNER JOIN empleados ON usuarios.empid = empleados.empid;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showUsuarios10()
+    {
+        $query = "SELECT userid, email, passw, nickname, IF(user_lvl=0, 'Usuario', 'Administrador') user_lvl, fechalt, nombre, paterno FROM usuarios INNER JOIN empleados ON usuarios.empid = empleados.empid; LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
 }
 
 

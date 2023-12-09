@@ -27,8 +27,7 @@
                 echo "
                 <li>$saludo</li>
                 <li><a href='index.php'>Home</a></li>
-                <li><a href='CategoryIndex.php'>Category</a></li>
-                <li><a href='CountryIndex.php'>Country</a></li>
+                <li><a href='View/formLanguage.html'>Registrar</a></li>
                 <li> <a href='buis/logout.php'>Salir</a> </li>";
             }
             else{

@@ -37,15 +37,15 @@
                         if ($_SESSION['lvl'] == 1) {
                             echo "
                             <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
-                            <li class='nav-item'><a class='nav-link' href='formRegistroAdministradores.php'>Usuarios</a>
+                            <li class='nav-item'><a class='nav-link' href='../login/formRegistroAdministradores.php'>Usuarios</a>
                             </li>";
                         }
                     } else {
                         echo "<li class='nav-item'><a class='nav-link disabled' href='#'>Login:</a></li>
-                        <li class='nav-item'><a class='nav-link' href='formLoginUsuarios.php'>Usuarios</a></li>
-                        <li class='nav-item'><a class='nav-link active' href='formLoginAdministradores.php'>Administradores</a></li>
+                        <li class='nav-item'><a class='nav-link' href='../login/formLoginUsuarios.php'>Usuarios</a></li>
+                        <li class='nav-item'><a class='nav-link active' href='../login/formLoginAdministradores.php'>Administradores</a></li>
                         <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
-                        <li class='nav-item'><a class='nav-link' href='formRegistroUsuarios.php'>Usuarios</a>
+                        <li class='nav-item'><a class='nav-link' href='../login/formRegistroUsuarios.php'>Usuarios</a>
                         </li>";
                     }
                     ?>
@@ -58,36 +58,10 @@
     <br><br><br><br>
     <div class="card center" style="width: 26rem;">
         <div class="card-body">
-            <main class="form-signin w-100 m-auto">
-                <form action="../../buis/login.php" method="post">
-                    <h1>Login: Administradores</h1>
-                    <?php
-                    if (isset($_GET['error'])) {
-                        echo "<div class='alert alert-danger' role='alert'>Email o contraseña incorrectos, por favor inténtelo de nuevo.</div>";
-                    }
-                    ?>
-                    <br>
-                    <div class="form-floating">
-                        <input type="email" class="form-control" placeholder="Email" id="correo" name="correo" required>
-                        <label for="floatingInput">Email</label>
-                    </div>
-                    <br>
-                    <div class="form-floating">
-                        <input type="password" class="form-control" placeholder="Contraseña" id="passw" name="passw"
-                            required>
-                        <label for="floatingPassword">Contraseña</label>
-                    </div>
-                    <br>
-
-                    <div class="form-floating">
-                        <input type="number" value="1" class="form-control" placeholder="Rol" id="lvl" name="lvl"
-                            hidden>
-                    </div>
-
-                    <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesión</button>
-                    <br><br>
-                </form>
-            </main>
+            <h1>Menu</h1>
+            <hr>
+            <a href='mostrarEmpleados.php' class='btn btn-dark btn-xlarge'>Empleados</a><br><br>
+            <a href='mostrarUsuarios.php' class='btn btn-dark btn-xlarge'>Usuarios</a>
         </div>
     </div>
 
