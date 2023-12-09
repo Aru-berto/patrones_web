@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 07-12-2023 a las 04:57:02
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Host: 127.0.0.1
+-- Generation Time: Dec 09, 2023 at 03:22 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,12 +18,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `sakila`
+-- Database: `sakila`
 --
 
 DELIMITER $$
 --
--- Procedimientos
+-- Procedures
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `film_in_stock` (IN `p_film_id` INT, IN `p_store_id` INT, OUT `p_film_count` INT)  READS SQL DATA BEGIN
      SELECT inventory_id
@@ -100,7 +100,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `rewards_report` (IN `min_monthly_pu
 END$$
 
 --
--- Funciones
+-- Functions
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `get_customer_balance` (`p_customer_id` INT, `p_effective_date` DATETIME) RETURNS DECIMAL(5,2) DETERMINISTIC READS SQL DATA BEGIN
 
@@ -184,7 +184,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `actor`
+-- Table structure for table `actor`
 --
 
 CREATE TABLE `actor` (
@@ -195,7 +195,7 @@ CREATE TABLE `actor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `actor`
+-- Dumping data for table `actor`
 --
 
 INSERT INTO `actor` (`actor_id`, `first_name`, `last_name`, `last_update`) VALUES
@@ -403,8 +403,8 @@ INSERT INTO `actor` (`actor_id`, `first_name`, `last_name`, `last_update`) VALUE
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `actor_info`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `actor_info`
+-- (See below for the actual view)
 --
 CREATE TABLE `actor_info` (
 `actor_id` smallint(5) unsigned
@@ -416,7 +416,7 @@ CREATE TABLE `actor_info` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `address`
+-- Table structure for table `address`
 --
 
 CREATE TABLE `address` (
@@ -431,7 +431,7 @@ CREATE TABLE `address` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `address`
+-- Dumping data for table `address`
 --
 
 INSERT INTO `address` (`address_id`, `address`, `address2`, `district`, `city_id`, `postal_code`, `phone`, `last_update`) VALUES
@@ -1043,7 +1043,7 @@ INSERT INTO `address` (`address_id`, `address`, `address2`, `district`, `city_id
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -1053,7 +1053,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `name`, `last_update`) VALUES
@@ -1072,12 +1072,15 @@ INSERT INTO `category` (`category_id`, `name`, `last_update`) VALUES
 (13, 'New', '2006-02-15 12:46:27'),
 (14, 'Sci-Fi', '2006-02-15 12:46:27'),
 (15, 'Sports', '2006-02-15 12:46:27'),
-(16, 'Travel', '2006-02-15 12:46:27');
+(16, 'Travel', '2006-02-15 12:46:27'),
+(17, '', '2023-12-09 01:37:25'),
+(18, '', '2023-12-09 01:41:24'),
+(19, 'Technofuturismo', '2023-12-09 01:42:41');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `city`
+-- Table structure for table `city`
 --
 
 CREATE TABLE `city` (
@@ -1088,7 +1091,7 @@ CREATE TABLE `city` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `city`
+-- Dumping data for table `city`
 --
 
 INSERT INTO `city` (`city_id`, `city`, `country_id`, `last_update`) VALUES
@@ -1696,7 +1699,7 @@ INSERT INTO `city` (`city_id`, `city`, `country_id`, `last_update`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `country`
+-- Table structure for table `country`
 --
 
 CREATE TABLE `country` (
@@ -1706,7 +1709,7 @@ CREATE TABLE `country` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `country`
+-- Dumping data for table `country`
 --
 
 INSERT INTO `country` (`country_id`, `country`, `last_update`) VALUES
@@ -1818,12 +1821,14 @@ INSERT INTO `country` (`country_id`, `country`, `last_update`) VALUES
 (106, 'Virgin Islands, U.S.', '2006-02-15 12:44:00'),
 (107, 'Yemen', '2006-02-15 12:44:00'),
 (108, 'Yugoslavia', '2006-02-15 12:44:00'),
-(109, 'Zambia', '2006-02-15 12:44:00');
+(109, 'Zambia', '2006-02-15 12:44:00'),
+(110, 'PB', '2023-12-09 01:37:38'),
+(111, 'Swali', '2023-12-09 01:40:30');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -1839,7 +1844,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`customer_id`, `store_id`, `first_name`, `last_name`, `email`, `address_id`, `active`, `create_date`, `last_update`) VALUES
@@ -2445,7 +2450,7 @@ INSERT INTO `customer` (`customer_id`, `store_id`, `first_name`, `last_name`, `e
 (599, 2, 'AUSTIN', 'CINTRON', 'AUSTIN.CINTRON@sakilacustomer.org', 605, 1, '2006-02-14 22:04:37', '2006-02-15 12:57:20');
 
 --
--- Disparadores `customer`
+-- Triggers `customer`
 --
 DELIMITER $$
 CREATE TRIGGER `customer_create_date` BEFORE INSERT ON `customer` FOR EACH ROW SET NEW.create_date = NOW()
@@ -2455,8 +2460,8 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `customer_list`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `customer_list`
+-- (See below for the actual view)
 --
 CREATE TABLE `customer_list` (
 `ID` smallint(5) unsigned
@@ -2473,7 +2478,7 @@ CREATE TABLE `customer_list` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `empleados`
+-- Table structure for table `empleados`
 --
 
 CREATE TABLE `empleados` (
@@ -2486,18 +2491,24 @@ CREATE TABLE `empleados` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `empleados`
+-- Dumping data for table `empleados`
 --
 
 INSERT INTO `empleados` (`empid`, `nombre`, `paterno`, `materno`, `fechanac`, `ingreso`) VALUES
 (1, 'Ned', 'Stark', '', '2005-12-01', '2023-12-02 16:52:00'),
 (2, 'test', 'test', '', '2005-12-25', '2023-12-02 17:26:07'),
-(3, 'testo', 'testo', 'testo', '2005-12-04', '2023-12-02 17:31:26');
+(3, 'testo', 'testo', 'testo', '2005-12-04', '2023-12-02 17:31:26'),
+(4, 'Juanito', 'Perez', '', '2005-12-02', '2023-12-09 00:51:24'),
+(5, 'Leopoldo', 'Victoria', '', '2005-12-10', '2023-12-09 00:58:08'),
+(6, 'Mani', 'Manito', '', '2005-12-05', '2023-12-09 01:01:25'),
+(7, 'Albert', 'Einstein', '', '2005-12-02', '2023-12-09 01:02:23'),
+(8, 'testdos', 'testdos', '', '2005-12-29', '2023-12-09 01:03:23'),
+(9, 'admin', 'admin', '', '2000-04-07', '2023-12-09 01:31:37');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `film`
+-- Table structure for table `film`
 --
 
 CREATE TABLE `film` (
@@ -2517,7 +2528,7 @@ CREATE TABLE `film` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `film`
+-- Dumping data for table `film`
 --
 
 INSERT INTO `film` (`film_id`, `title`, `description`, `release_year`, `language_id`, `original_language_id`, `rental_duration`, `rental_rate`, `length`, `replacement_cost`, `rating`, `special_features`, `last_update`) VALUES
@@ -3527,7 +3538,7 @@ INSERT INTO `film` (`film_id`, `title`, `description`, `release_year`, `language
 (1000, 'ZORRO ARK', 'A Intrepid Panorama of a Mad Scientist And a Boy who must Redeem a Boy in A Monastery', '2006', 1, NULL, 3, 4.99, 50, 18.99, 'NC-17', 'Trailers,Commentaries,Behind the Scenes', '2006-02-15 13:03:42');
 
 --
--- Disparadores `film`
+-- Triggers `film`
 --
 DELIMITER $$
 CREATE TRIGGER `del_film` AFTER DELETE ON `film` FOR EACH ROW BEGIN
@@ -3559,7 +3570,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `film_actor`
+-- Table structure for table `film_actor`
 --
 
 CREATE TABLE `film_actor` (
@@ -3569,7 +3580,7 @@ CREATE TABLE `film_actor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `film_actor`
+-- Dumping data for table `film_actor`
 --
 
 INSERT INTO `film_actor` (`actor_id`, `film_id`, `last_update`) VALUES
@@ -9042,7 +9053,7 @@ INSERT INTO `film_actor` (`actor_id`, `film_id`, `last_update`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `film_category`
+-- Table structure for table `film_category`
 --
 
 CREATE TABLE `film_category` (
@@ -9052,7 +9063,7 @@ CREATE TABLE `film_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `film_category`
+-- Dumping data for table `film_category`
 --
 
 INSERT INTO `film_category` (`film_id`, `category_id`, `last_update`) VALUES
@@ -10060,8 +10071,8 @@ INSERT INTO `film_category` (`film_id`, `category_id`, `last_update`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `film_list`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `film_list`
+-- (See below for the actual view)
 --
 CREATE TABLE `film_list` (
 `FID` smallint(5) unsigned
@@ -10077,7 +10088,7 @@ CREATE TABLE `film_list` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `film_text`
+-- Table structure for table `film_text`
 --
 
 CREATE TABLE `film_text` (
@@ -10087,7 +10098,7 @@ CREATE TABLE `film_text` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `film_text`
+-- Dumping data for table `film_text`
 --
 
 INSERT INTO `film_text` (`film_id`, `title`, `description`) VALUES
@@ -11097,7 +11108,7 @@ INSERT INTO `film_text` (`film_id`, `title`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `inventory`
+-- Table structure for table `inventory`
 --
 
 CREATE TABLE `inventory` (
@@ -11108,7 +11119,7 @@ CREATE TABLE `inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `inventory`
+-- Dumping data for table `inventory`
 --
 
 INSERT INTO `inventory` (`inventory_id`, `film_id`, `store_id`, `last_update`) VALUES
@@ -15700,7 +15711,7 @@ INSERT INTO `inventory` (`inventory_id`, `film_id`, `store_id`, `last_update`) V
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `language`
+-- Table structure for table `language`
 --
 
 CREATE TABLE `language` (
@@ -15710,7 +15721,7 @@ CREATE TABLE `language` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `language`
+-- Dumping data for table `language`
 --
 
 INSERT INTO `language` (`language_id`, `name`, `last_update`) VALUES
@@ -15719,13 +15730,15 @@ INSERT INTO `language` (`language_id`, `name`, `last_update`) VALUES
 (3, 'Japanese', '2006-02-15 13:02:19'),
 (4, 'Mandarin', '2006-02-15 13:02:19'),
 (5, 'French', '2006-02-15 13:02:19'),
-(6, 'German', '2006-02-15 13:02:19');
+(6, 'German', '2006-02-15 13:02:19'),
+(7, 'Swagili', '2023-12-09 01:37:13'),
+(8, 'Albertario', '2023-12-09 01:40:11');
 
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `nicer_but_slower_film_list`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `nicer_but_slower_film_list`
+-- (See below for the actual view)
 --
 CREATE TABLE `nicer_but_slower_film_list` (
 `FID` smallint(5) unsigned
@@ -15741,7 +15754,7 @@ CREATE TABLE `nicer_but_slower_film_list` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `payment`
+-- Table structure for table `payment`
 --
 
 CREATE TABLE `payment` (
@@ -15755,7 +15768,7 @@ CREATE TABLE `payment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `payment`
+-- Dumping data for table `payment`
 --
 
 INSERT INTO `payment` (`payment_id`, `customer_id`, `staff_id`, `rental_id`, `amount`, `payment_date`, `last_update`) VALUES
@@ -31828,7 +31841,7 @@ INSERT INTO `payment` (`payment_id`, `customer_id`, `staff_id`, `rental_id`, `am
 (16049, 599, 2, 15725, 2.99, '2005-08-23 11:25:00', '2006-02-16 06:24:13');
 
 --
--- Disparadores `payment`
+-- Triggers `payment`
 --
 DELIMITER $$
 CREATE TRIGGER `payment_date` BEFORE INSERT ON `payment` FOR EACH ROW SET NEW.payment_date = NOW()
@@ -31838,7 +31851,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `rental`
+-- Table structure for table `rental`
 --
 
 CREATE TABLE `rental` (
@@ -31852,7 +31865,7 @@ CREATE TABLE `rental` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `rental`
+-- Dumping data for table `rental`
 --
 
 INSERT INTO `rental` (`rental_id`, `rental_date`, `inventory_id`, `customer_id`, `return_date`, `staff_id`, `last_update`) VALUES
@@ -47930,7 +47943,7 @@ INSERT INTO `rental` (`rental_id`, `rental_date`, `inventory_id`, `customer_id`,
 (16049, '2005-08-23 22:50:12', 2666, 393, '2005-08-30 01:01:12', 2, '2006-02-16 05:30:53');
 
 --
--- Disparadores `rental`
+-- Triggers `rental`
 --
 DELIMITER $$
 CREATE TRIGGER `rental_date` BEFORE INSERT ON `rental` FOR EACH ROW SET NEW.rental_date = NOW()
@@ -47940,8 +47953,8 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `sales_by_film_category`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `sales_by_film_category`
+-- (See below for the actual view)
 --
 CREATE TABLE `sales_by_film_category` (
 `category` varchar(25)
@@ -47951,8 +47964,8 @@ CREATE TABLE `sales_by_film_category` (
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `sales_by_store`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `sales_by_store`
+-- (See below for the actual view)
 --
 CREATE TABLE `sales_by_store` (
 `store` varchar(101)
@@ -47963,7 +47976,7 @@ CREATE TABLE `sales_by_store` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `staff`
+-- Table structure for table `staff`
 --
 
 CREATE TABLE `staff` (
@@ -47981,7 +47994,7 @@ CREATE TABLE `staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `staff`
+-- Dumping data for table `staff`
 --
 
 INSERT INTO `staff` (`staff_id`, `first_name`, `last_name`, `address_id`, `picture`, `email`, `store_id`, `active`, `username`, `password`, `last_update`) VALUES
@@ -47992,8 +48005,8 @@ INSERT INTO `staff` (`staff_id`, `first_name`, `last_name`, `address_id`, `pictu
 -- --------------------------------------------------------
 
 --
--- Estructura Stand-in para la vista `staff_list`
--- (Véase abajo para la vista actual)
+-- Stand-in structure for view `staff_list`
+-- (See below for the actual view)
 --
 CREATE TABLE `staff_list` (
 `ID` tinyint(3) unsigned
@@ -48009,7 +48022,7 @@ CREATE TABLE `staff_list` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `store`
+-- Table structure for table `store`
 --
 
 CREATE TABLE `store` (
@@ -48020,7 +48033,7 @@ CREATE TABLE `store` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `store`
+-- Dumping data for table `store`
 --
 
 INSERT INTO `store` (`store_id`, `manager_staff_id`, `address_id`, `last_update`) VALUES
@@ -48030,7 +48043,7 @@ INSERT INTO `store` (`store_id`, `manager_staff_id`, `address_id`, `last_update`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE `usuarios` (
@@ -48038,23 +48051,28 @@ CREATE TABLE `usuarios` (
   `email` varchar(255) NOT NULL,
   `passw` varchar(255) NOT NULL,
   `nickname` varchar(255) NOT NULL,
+  `user_lvl` int(11) NOT NULL DEFAULT 0,
   `fechalt` timestamp NOT NULL DEFAULT current_timestamp(),
   `empid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`userid`, `email`, `passw`, `nickname`, `fechalt`, `empid`) VALUES
-(1, 'ned@stark.com', 'NedStark1', 'Ned', '2023-12-02 16:52:00', 1),
-(2, 'test@test.com', 'test1AAAAA', 'test', '2023-12-02 17:26:07', 2),
-(3, 'testo@testo.com', 'testoA1111', 'Testo', '2023-12-02 17:31:26', 3);
+INSERT INTO `usuarios` (`userid`, `email`, `passw`, `nickname`, `user_lvl`, `fechalt`, `empid`) VALUES
+(1, 'ned@stark.com', 'NedStark1', 'Ned', 0, '2023-12-02 16:52:00', 1),
+(2, 'test@test.com', 'test1AAAAA', 'test', 0, '2023-12-02 17:26:07', 2),
+(3, 'testo@testo.com', 'Testo1234', 'Testo', 1, '2023-12-02 17:31:26', 3),
+(4, 'mani@manito.com', 'Manito1234', 'Mani', 0, '2023-12-09 01:01:25', 6),
+(5, 'albert@einstein.com', 'Albert1234', 'Albert', 0, '2023-12-09 01:02:23', 7),
+(6, 'test2@test2.com', 'Test21234', 'Test2', 0, '2023-12-09 01:03:23', 8),
+(7, 'admin@admin.com', 'Admin1234', 'Admin', 1, '2023-12-09 01:31:38', 9);
 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `actor_info`
+-- Structure for view `actor_info`
 --
 DROP TABLE IF EXISTS `actor_info`;
 
@@ -48063,7 +48081,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY INVOKER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `customer_list`
+-- Structure for view `customer_list`
 --
 DROP TABLE IF EXISTS `customer_list`;
 
@@ -48072,7 +48090,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `film_list`
+-- Structure for view `film_list`
 --
 DROP TABLE IF EXISTS `film_list`;
 
@@ -48081,7 +48099,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `nicer_but_slower_film_list`
+-- Structure for view `nicer_but_slower_film_list`
 --
 DROP TABLE IF EXISTS `nicer_but_slower_film_list`;
 
@@ -48090,7 +48108,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `sales_by_film_category`
+-- Structure for view `sales_by_film_category`
 --
 DROP TABLE IF EXISTS `sales_by_film_category`;
 
@@ -48099,7 +48117,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `sales_by_store`
+-- Structure for view `sales_by_store`
 --
 DROP TABLE IF EXISTS `sales_by_store`;
 
@@ -48108,51 +48126,51 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
--- Estructura para la vista `staff_list`
+-- Structure for view `staff_list`
 --
 DROP TABLE IF EXISTS `staff_list`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staff_list`  AS SELECT `s`.`staff_id` AS `ID`, concat(`s`.`first_name`,_utf8mb4' ',`s`.`last_name`) AS `name`, `a`.`address` AS `address`, `a`.`postal_code` AS `zip code`, `a`.`phone` AS `phone`, `city`.`city` AS `city`, `country`.`country` AS `country`, `s`.`store_id` AS `SID` FROM (((`staff` `s` join `address` `a` on(`s`.`address_id` = `a`.`address_id`)) join `city` on(`a`.`city_id` = `city`.`city_id`)) join `country` on(`city`.`country_id` = `country`.`country_id`)) ;
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `actor`
+-- Indexes for table `actor`
 --
 ALTER TABLE `actor`
   ADD PRIMARY KEY (`actor_id`),
   ADD KEY `idx_actor_last_name` (`last_name`);
 
 --
--- Indices de la tabla `address`
+-- Indexes for table `address`
 --
 ALTER TABLE `address`
   ADD PRIMARY KEY (`address_id`),
   ADD KEY `idx_fk_city_id` (`city_id`);
 
 --
--- Indices de la tabla `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Indices de la tabla `city`
+-- Indexes for table `city`
 --
 ALTER TABLE `city`
   ADD PRIMARY KEY (`city_id`),
   ADD KEY `idx_fk_country_id` (`country_id`);
 
 --
--- Indices de la tabla `country`
+-- Indexes for table `country`
 --
 ALTER TABLE `country`
   ADD PRIMARY KEY (`country_id`);
 
 --
--- Indices de la tabla `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`),
@@ -48161,13 +48179,13 @@ ALTER TABLE `customer`
   ADD KEY `idx_last_name` (`last_name`);
 
 --
--- Indices de la tabla `empleados`
+-- Indexes for table `empleados`
 --
 ALTER TABLE `empleados`
   ADD PRIMARY KEY (`empid`);
 
 --
--- Indices de la tabla `film`
+-- Indexes for table `film`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`film_id`),
@@ -48176,28 +48194,28 @@ ALTER TABLE `film`
   ADD KEY `idx_fk_original_language_id` (`original_language_id`);
 
 --
--- Indices de la tabla `film_actor`
+-- Indexes for table `film_actor`
 --
 ALTER TABLE `film_actor`
   ADD PRIMARY KEY (`actor_id`,`film_id`),
   ADD KEY `idx_fk_film_id` (`film_id`);
 
 --
--- Indices de la tabla `film_category`
+-- Indexes for table `film_category`
 --
 ALTER TABLE `film_category`
   ADD PRIMARY KEY (`film_id`,`category_id`),
   ADD KEY `fk_film_category_category` (`category_id`);
 
 --
--- Indices de la tabla `film_text`
+-- Indexes for table `film_text`
 --
 ALTER TABLE `film_text`
   ADD PRIMARY KEY (`film_id`);
 ALTER TABLE `film_text` ADD FULLTEXT KEY `idx_title_description` (`title`,`description`);
 
 --
--- Indices de la tabla `inventory`
+-- Indexes for table `inventory`
 --
 ALTER TABLE `inventory`
   ADD PRIMARY KEY (`inventory_id`),
@@ -48205,13 +48223,13 @@ ALTER TABLE `inventory`
   ADD KEY `idx_store_id_film_id` (`store_id`,`film_id`);
 
 --
--- Indices de la tabla `language`
+-- Indexes for table `language`
 --
 ALTER TABLE `language`
   ADD PRIMARY KEY (`language_id`);
 
 --
--- Indices de la tabla `payment`
+-- Indexes for table `payment`
 --
 ALTER TABLE `payment`
   ADD PRIMARY KEY (`payment_id`),
@@ -48220,7 +48238,7 @@ ALTER TABLE `payment`
   ADD KEY `fk_payment_rental` (`rental_id`);
 
 --
--- Indices de la tabla `rental`
+-- Indexes for table `rental`
 --
 ALTER TABLE `rental`
   ADD PRIMARY KEY (`rental_id`),
@@ -48230,7 +48248,7 @@ ALTER TABLE `rental`
   ADD KEY `idx_fk_staff_id` (`staff_id`);
 
 --
--- Indices de la tabla `staff`
+-- Indexes for table `staff`
 --
 ALTER TABLE `staff`
   ADD PRIMARY KEY (`staff_id`),
@@ -48238,7 +48256,7 @@ ALTER TABLE `staff`
   ADD KEY `idx_fk_address_id` (`address_id`);
 
 --
--- Indices de la tabla `store`
+-- Indexes for table `store`
 --
 ALTER TABLE `store`
   ADD PRIMARY KEY (`store_id`),
@@ -48246,159 +48264,159 @@ ALTER TABLE `store`
   ADD KEY `idx_fk_address_id` (`address_id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`userid`),
   ADD KEY `empid` (`empid`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `actor`
+-- AUTO_INCREMENT for table `actor`
 --
 ALTER TABLE `actor`
   MODIFY `actor_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
--- AUTO_INCREMENT de la tabla `address`
+-- AUTO_INCREMENT for table `address`
 --
 ALTER TABLE `address`
   MODIFY `address_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=606;
 
 --
--- AUTO_INCREMENT de la tabla `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `category_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT de la tabla `city`
+-- AUTO_INCREMENT for table `city`
 --
 ALTER TABLE `city`
   MODIFY `city_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=601;
 
 --
--- AUTO_INCREMENT de la tabla `country`
+-- AUTO_INCREMENT for table `country`
 --
 ALTER TABLE `country`
-  MODIFY `country_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `country_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
--- AUTO_INCREMENT de la tabla `customer`
+-- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `customer_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=600;
 
 --
--- AUTO_INCREMENT de la tabla `empleados`
+-- AUTO_INCREMENT for table `empleados`
 --
 ALTER TABLE `empleados`
-  MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `empid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT de la tabla `film`
+-- AUTO_INCREMENT for table `film`
 --
 ALTER TABLE `film`
   MODIFY `film_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
 
 --
--- AUTO_INCREMENT de la tabla `inventory`
+-- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
   MODIFY `inventory_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4582;
 
 --
--- AUTO_INCREMENT de la tabla `language`
+-- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
-  MODIFY `language_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `language_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `payment`
+-- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
   MODIFY `payment_id` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16050;
 
 --
--- AUTO_INCREMENT de la tabla `rental`
+-- AUTO_INCREMENT for table `rental`
 --
 ALTER TABLE `rental`
   MODIFY `rental_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16050;
 
 --
--- AUTO_INCREMENT de la tabla `staff`
+-- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
   MODIFY `staff_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `store`
+-- AUTO_INCREMENT for table `store`
 --
 ALTER TABLE `store`
   MODIFY `store_id` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `userid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `address`
+-- Constraints for table `address`
 --
 ALTER TABLE `address`
   ADD CONSTRAINT `fk_address_city` FOREIGN KEY (`city_id`) REFERENCES `city` (`city_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `city`
+-- Constraints for table `city`
 --
 ALTER TABLE `city`
   ADD CONSTRAINT `fk_city_country` FOREIGN KEY (`country_id`) REFERENCES `country` (`country_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `customer`
+-- Constraints for table `customer`
 --
 ALTER TABLE `customer`
   ADD CONSTRAINT `fk_customer_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_customer_store` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `film`
+-- Constraints for table `film`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `fk_film_language` FOREIGN KEY (`language_id`) REFERENCES `language` (`language_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_film_language_original` FOREIGN KEY (`original_language_id`) REFERENCES `language` (`language_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `film_actor`
+-- Constraints for table `film_actor`
 --
 ALTER TABLE `film_actor`
   ADD CONSTRAINT `fk_film_actor_actor` FOREIGN KEY (`actor_id`) REFERENCES `actor` (`actor_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_film_actor_film` FOREIGN KEY (`film_id`) REFERENCES `film` (`film_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `film_category`
+-- Constraints for table `film_category`
 --
 ALTER TABLE `film_category`
   ADD CONSTRAINT `fk_film_category_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_film_category_film` FOREIGN KEY (`film_id`) REFERENCES `film` (`film_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `inventory`
+-- Constraints for table `inventory`
 --
 ALTER TABLE `inventory`
   ADD CONSTRAINT `fk_inventory_film` FOREIGN KEY (`film_id`) REFERENCES `film` (`film_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_inventory_store` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `payment`
+-- Constraints for table `payment`
 --
 ALTER TABLE `payment`
   ADD CONSTRAINT `fk_payment_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON UPDATE CASCADE,
@@ -48406,7 +48424,7 @@ ALTER TABLE `payment`
   ADD CONSTRAINT `fk_payment_staff` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `rental`
+-- Constraints for table `rental`
 --
 ALTER TABLE `rental`
   ADD CONSTRAINT `fk_rental_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`) ON UPDATE CASCADE,
@@ -48414,21 +48432,21 @@ ALTER TABLE `rental`
   ADD CONSTRAINT `fk_rental_staff` FOREIGN KEY (`staff_id`) REFERENCES `staff` (`staff_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `staff`
+-- Constraints for table `staff`
 --
 ALTER TABLE `staff`
   ADD CONSTRAINT `fk_staff_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_staff_store` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `store`
+-- Constraints for table `store`
 --
 ALTER TABLE `store`
   ADD CONSTRAINT `fk_store_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_store_staff` FOREIGN KEY (`manager_staff_id`) REFERENCES `staff` (`staff_id`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `usuarios`
+-- Constraints for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`empid`) REFERENCES `empleados` (`empid`);
