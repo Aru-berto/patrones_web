@@ -71,6 +71,21 @@ include_once "../../data/Usuarios.php";
                 echo "<h3 class='text-muted'>(Por favor inicie sesión para ver más de 10 resultados)</h3>";
             } ?>
             <hr>
+            <form action="mostrarUsuarios.php" method="post">
+                <h4>Seleccione el orden</h4>
+                <select name="orden" id="">
+                    <option value="" selected disabled>Seleccionar</option>
+                    <option value="EmAZ">Email A-Z</option>
+                    <option value="EmZA">Email Z-A</option>
+                    <option value="NickAZ">Nickname A-Z</option>
+                    <option value="NickZA">Nickname Z-A</option>
+                    <option value="LvlAsc">Rol / Nivel ^</option>
+                    <option value="LvlDesc">Rol / Nivel v</option>
+                </select>
+                <input type="submit">
+                <br><br>
+            </form>
+            <hr><br>
             <?php
 
             // Sí loggeado -----------------------------------------------------------------------------------------------------------
@@ -97,7 +112,34 @@ include_once "../../data/Usuarios.php";
                                 <tbody>";
 
                 $usr = new Usuarios();
-                $consulta = $usr->showUsuarios();
+
+                if (isset($_POST['orden'])) {
+                    switch ($_POST['orden']) {
+                        case 'EmAZ':
+                            $consulta = $usr->showUsuariosEmailAsc();
+                            break;
+                        case 'EmZA':
+                            $consulta = $usr->showUsuariosEmailDesc();
+                            break;
+                        case 'NickAZ':
+                            $consulta = $usr->showUsuariosNickAsc();
+                            break;
+                        case 'NickZA':
+                            $consulta = $usr->showUsuariosNickDesc();
+                            break;
+                        case 'LvlAsc':
+                            $consulta = $usr->showUsuariosLvlAsc();
+                            break;
+                        case 'LvlDesc':
+                            $consulta = $usr->showUsuariosLvlDesc();
+                            break;
+                        default:
+                            $consulta = $usr->showUsuarios();
+                            break;
+                    }
+                } else {
+                    $consulta = $usr->showUsuarios();
+                }
 
                 if ($consulta) {
                     while ($row = mysqli_fetch_assoc($consulta)) {
@@ -135,7 +177,34 @@ include_once "../../data/Usuarios.php";
                                 <tbody>";
 
                 $usr = new Usuarios();
-                $consulta = $usr->showUsuarios10();
+
+                if (isset($_POST['orden'])) {
+                    switch ($_POST['orden']) {
+                        case 'EmAZ':
+                            $consulta = $usr->showUsuariosEmailAsc10();
+                            break;
+                        case 'EmZA':
+                            $consulta = $usr->showUsuariosEmailDesc10();
+                            break;
+                        case 'NickAZ':
+                            $consulta = $usr->showUsuariosNickAsc10();
+                            break;
+                        case 'NickZA':
+                            $consulta = $usr->showUsuariosNickDesc10();
+                            break;
+                        case 'LvlAsc':
+                            $consulta = $usr->showUsuariosLvlAsc10();
+                            break;
+                        case 'LvlDesc':
+                            $consulta = $usr->showUsuariosLvlDesc10();
+                            break;
+                        default:
+                            $consulta = $usr->showUsuarios10();
+                            break;
+                    }
+                } else {
+                    $consulta = $usr->showUsuarios10();
+                }
 
                 if ($consulta) {
                     while ($row = mysqli_fetch_assoc($consulta)) {

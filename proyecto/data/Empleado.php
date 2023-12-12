@@ -74,6 +74,174 @@ class Empleado
         }
         return $dataset;
     }
+
+    public function showEmpleadosPatAsc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY paterno ASC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosPatDesc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY paterno DESC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNomAsc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY nombre ASC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNomDesc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY nombre DESC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNacAsc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY fechanac ASC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNacDesc()
+    {
+        $query = "SELECT * FROM empleados ORDER BY fechanac DESC;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosPatAsc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY paterno ASC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosPatDesc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY paterno DESC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNomAsc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY nombre ASC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNomDesc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY nombre DESC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNacAsc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY fechanac ASC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
+
+    public function showEmpleadosNacDesc10()
+    {
+        $query = "SELECT * FROM empleados ORDER BY fechanac DESC LIMIT 10;";
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if ($conectado) {
+            $dataset = $con1->query($query);
+        } else {
+            $dataset = "error";
+        }
+        return $dataset;
+    }
 }
 
 

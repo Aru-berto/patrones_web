@@ -68,6 +68,22 @@ include_once "../../data/Empleado.php";
                 echo "<h3 class='text-muted'>(Por favor inicie sesión para ver más de 10 resultados)</h3>";
             } ?>
             <hr>
+            <form action="mostrarEmpleados.php" method="post">
+                <h4>Seleccione el orden</h4>
+                <select name="orden" id="">
+                    <option value="" selected disabled>Seleccionar</option>
+                    <option value="PatAZ">Paterno A-Z</option>
+                    <option value="PatZA">Paterno Z-A</option>
+                    <option value="NomAZ">Nombre A-Z</option>
+                    <option value="NomZA">Nombre Z-A</option>
+                    <option value="NacAsc">Nacimiento ^</option>
+                    <option value="NacDesc">Nacimiento v</option>
+                </select>
+                <input type="submit">
+                <br><br>
+            </form>
+            <hr><br>
+
             <?php
 
             // Sí loggeado -----------------------------------------------------------------------------------------------------------
@@ -92,7 +108,34 @@ include_once "../../data/Empleado.php";
                                 <tbody>";
 
                 $empleado = new Empleado();
-                $consulta = $empleado->showEmpleados();
+
+                if (isset($_POST['orden'])) {
+                    switch ($_POST['orden']) {
+                        case 'PatAZ':
+                            $consulta = $empleado->showEmpleadosPatAsc();
+                            break;
+                        case 'PatZA':
+                            $consulta = $empleado->showEmpleadosPatDesc();
+                            break;
+                        case 'NomAZ':
+                            $consulta = $empleado->showEmpleadosNomAsc();
+                            break;
+                        case 'NomZA':
+                            $consulta = $empleado->showEmpleadosNomDesc();
+                            break;
+                        case 'NacAsc':
+                            $consulta = $empleado->showEmpleadosNacAsc();
+                            break;
+                        case 'NacDesc':
+                            $consulta = $empleado->showEmpleadosNacDesc();
+                            break;
+                        default:
+                            $consulta = $empleado->showEmpleados();
+                            break;
+                    }
+                } else {
+                    $consulta = $empleado->showEmpleados();
+                }
 
                 if ($consulta) {
                     while ($row = mysqli_fetch_assoc($consulta)) {
@@ -128,7 +171,34 @@ include_once "../../data/Empleado.php";
                                 <tbody>";
 
                 $empleado = new Empleado();
-                $consulta = $empleado->showEmpleados10();
+
+                if (isset($_POST['orden'])) {
+                    switch ($_POST['orden']) {
+                        case 'PatAZ':
+                            $consulta = $empleado->showEmpleadosPatAsc10();
+                            break;
+                        case 'PatZA':
+                            $consulta = $empleado->showEmpleadosPatDesc10();
+                            break;
+                        case 'NomAZ':
+                            $consulta = $empleado->showEmpleadosNomAsc10();
+                            break;
+                        case 'NomZA':
+                            $consulta = $empleado->showEmpleadosNomDesc10();
+                            break;
+                        case 'NacAsc':
+                            $consulta = $empleado->showEmpleadosNacAsc10();
+                            break;
+                        case 'NacDesc':
+                            $consulta = $empleado->showEmpleadosNacDesc10();
+                            break;
+                        default:
+                            $consulta = $empleado->showEmpleados10();
+                            break;
+                    }
+                } else {
+                    $consulta = $empleado->showEmpleados10();
+                }
 
                 if ($consulta) {
                     while ($row = mysqli_fetch_assoc($consulta)) {

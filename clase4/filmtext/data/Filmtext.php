@@ -86,6 +86,22 @@ class Filmtext{
         return $dataset;
         
     }
+
+    public function getFilmFilter($valor){
+        $query = "SELECT film_id num, title pelicula, description sinopsis FROM film_text where title like '%$valor%' OR description like '%$valor%';";
+
+        $con1 = Connection::getInstance();
+        $conectado = $con1->connect();
+
+        if($conectado){
+            $dataset = $con1->query($query);
+        }
+        else{
+            $dataset = "error";
+        }
+        return $dataset;
+        
+    }
 }
 
 

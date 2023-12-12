@@ -51,7 +51,8 @@ if (!isset($_SESSION['lvl'])) {
                             </li>";
                         }
                     } else {
-                        echo "<li class='nav-item'><a class='nav-link disabled' href='#'>Login:</a></li>
+                        echo "<li class='nav-item'><a class='nav-link' href='view/emp_usr/menu.php'>Empleados/usuarios</a></li>
+                        <li class='nav-item'><a class='nav-link disabled' href='#'>Login:</a></li>
                         <li class='nav-item'><a class='nav-link' href='view/login/formLoginUsuarios.php'>Usuarios</a></li>
                         <li class='nav-item'><a class='nav-link' href='view/login/formLoginAdministradores.php'>Administradores</a></li>
                         <li class='nav-item'><a class='nav-link disabled' href='#'>Registro:</a></li>
